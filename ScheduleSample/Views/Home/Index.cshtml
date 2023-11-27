@@ -1,0 +1,10 @@
+﻿@using Syncfusion.EJ2
+
+<div class="control-section">
+    <div class="content-wrapper">
+        @Html.EJS().Schedule("schedule").Width("100%").Height("650px").CurrentView(Syncfusion.EJ2.Schedule.View.).EventSettings(es => es.DataSource(dataManger =>{
+       dataManger.Url("/Home/LoadData").CrudUrl("/Home/UpdateData").Adaptor("UrlAdaptor")
+      .CrossDomain(true);
+   })).SelectedDate(new DateTime(2021, 8, 5)).Render()
+    </div>
+</div>
